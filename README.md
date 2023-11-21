@@ -7,7 +7,7 @@ This component library is Displays a modal in the center of the screen with a cu
 The package can be installed via npm
 
 ```bash
-npm install --save my-react-modal
+npm i my-react-modal-sv
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install --save my-react-modal
 Import the Modal component from the library:
 
 ```bash
-import Modal from "my-react-modal";
+import Modal from "my-react-modal-sv";
 ```
 
 The Modal component needs 3 props :
@@ -27,7 +27,7 @@ Here's an example:
 
 ```jsx
 import { useState } from "react";
-import Modal from "my-react-modal";
+import Modal from "my-react-modal-sv";
 
 function Example() {
     const [isModalOpen, setIsModalOpen] = useState(false);
