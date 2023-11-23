@@ -25,9 +25,10 @@ import 'my-react-modal-sv/dist/style.css';
 ```
 
 The Modal component needs 3 props :
-{isOpen} : A property that indicates whether the modal is displayed.
-{onClose} : A callback function to close the modal.
-{children} : The content displayed within the modal.
+
+-   {isOpen} : A property that indicates whether the modal is displayed.
+-   {onClose} : A callback function to close the modal.
+-   {children} : The content displayed within the modal.
 
 Here's an example:
 
