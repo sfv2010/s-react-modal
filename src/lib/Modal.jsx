@@ -1,20 +1,11 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+import "./Modal.css";
 
 function Modal({ isOpen, onClose, children }) {
-    const [modalVisible, setModalVisible] = useState(isOpen);
     const closeRef = useRef();
 
-    useEffect(() => {
-        if (isOpen) {
-            setModalVisible(true);
-        } else {
-            setTimeout(() => setModalVisible(false), 300);
-        }
-    }, [isOpen]);
-
     const closeModal = () => {
-        setModalVisible(false);
         onClose();
     };
 
@@ -31,26 +22,26 @@ function Modal({ isOpen, onClose, children }) {
         return () => {
             document.removeEventListener("keydown", handleKeyDown);
         };
-    }, [onClose, modalVisible]);
+    }, [onClose]);
     return (
         <div
-            className={`fixed inset-0 bg-black
+            className={`fixed inset-0 bg-slate-950
             bg-opacity-50 transition-opacity ${
-                modalVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+                isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
             onClick={closeModal}>
             <div
-                className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-4 sm:p-8 w-3/4 sm:w-1/2 xl:w-1/3 text-center font-bold font-sans sm:text-xl md:text-3xl text-custom-505 rounded-xl border-solid border-8 border-custom-505  transition-transform ${
-                    modalVisible
-                        ? "scale-100 transition-all ease-out duration-300"
+                className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-7 sm:p-8 w-3/4 sm:w-1/2 xl:w-1/3 text-center font-bold font-sans text-2xl md:text-3xl text-custom-505 rounded-xl border-solid border-8 border-custom-505 shadow-lg shadow-black  transition-transform ${
+                    isOpen
+                        ? "scale-100 transition-all ease-out duration-500"
                         : "scale-90"
                 }`}
                 onClick={(e) => e.stopPropagation()}>
-                <div className="absolute -top-5 -right-4">
+                <div className="absolute -top-6 -right-5">
                     {" "}
-                    <span className="relative flex h-8 w-8">
+                    <span className="relative flex h-10 w-10">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-custom-505 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-8 w-8 bg-custom-505"></span>
+                        <span className="relative inline-flex rounded-full h-10 w-10 bg-custom-505"></span>
                     </span>
                     <button
                         className="absolute top-1/2 light-1 transform -translate-x-1/2 -translate-y-1/2 inline-flex text-white cursor-pointer"

@@ -1,4 +1,4 @@
-# Library of a React Modal Component
+# my-react-modal-sv
 
 This component library is Displays a modal in the center of the screen with a customizable message.
 
@@ -18,6 +18,12 @@ Import the Modal component from the library:
 import Modal from "my-react-modal-sv";
 ```
 
+Import CSS (tailwind)
+
+```bash
+import 'my-react-modal-sv/dist/style.css';
+```
+
 The Modal component needs 3 props :
 {isOpen} : A property that indicates whether the modal is displayed.
 {onClose} : A callback function to close the modal.
@@ -28,6 +34,7 @@ Here's an example:
 ```jsx
 import { useState } from "react";
 import Modal from "my-react-modal-sv";
+import "my-react-modal-sv/dist/style.css";
 
 function Example() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -53,10 +60,11 @@ function Example() {
                     Submit Form
                 </button>
             </form>
-
-            <Modal isOpen={isModalOpen} onClose={closeModal}>
-                <h1>Employee created !</h1>
-            </Modal>
+            {isModalOpen && (
+                <Modal isOpen={isModalOpen} onClose={closeModal}>
+                    <h1>Employee created !</h1>
+                </Modal>
+            )}
         </div>
     );
 }
