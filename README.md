@@ -60,11 +60,10 @@ function Example() {
                     Submit Form
                 </button>
             </form>
-            {isModalOpen && (
-                <Modal isOpen={isModalOpen} onClose={closeModal}>
-                    <h1>Employee created !</h1>
-                </Modal>
-            )}
+
+            <Modal isOpen={isModalOpen} onClose={closeModal}>
+                <h1>Employee created !</h1>
+            </Modal>
         </div>
     );
 }
