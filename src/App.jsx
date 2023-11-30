@@ -22,13 +22,11 @@ function App() {
                 onSubmit={handleSubmit}
                 className="flex justify-center  items-center h-screen">
                 {" "}
-                <label
-                    className=" text-black font-bold  pr-4"
-                    htmlFor="username">
+                <label className=" text-black font-bold  pr-4">
                     User:{" "}
                     <input
                         type="text"
-                        id="username"
+                        name="username"
                         className="bg-gray-200 appearance-none border-2 border-gray-400 rounded py-2 px-4 text-gray-700 leading-tight focus:bg-white focus:outline-green-700 "
                     />
                 </label>

@@ -54,16 +54,27 @@ function Example() {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form
+                onSubmit={handleSubmit}
+                className="flex justify-center  items-center h-screen">
+                {" "}
+                <label className=" text-black font-bold  pr-4">
+                    User:{" "}
+                    <input
+                        type="text"
+                        name="username"
+                        className="bg-gray-200 appearance-none border-2 border-gray-400 rounded py-2 px-4 text-gray-700 leading-tight focus:bg-white focus:outline-green-700 "
+                    />
+                </label>
                 <button
                     type="submit"
-                    className="fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded border-solid border-2 border-custom-505 font-bold p-3">
+                    className="rounded border-solid border-2 border-custom-505 font-bold p-3">
                     Submit Form
                 </button>
             </form>
 
             <Modal isOpen={isModalOpen} onClose={closeModal}>
-                <h1>Employee created !</h1>
+                <h1>Example created !</h1>
             </Modal>
         </div>
     );
