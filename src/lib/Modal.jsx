@@ -2,6 +2,17 @@ import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import "./Modal.css";
 
+/**
+ * Modal component for displaying content in a modal dialog.
+ *
+ * @component
+ * @param {Object} props - The properties of the component.
+ * @param {boolean} props.isOpen - Determines whether the modal is open or closed.
+ * @param {Function} props.onClose - Callback function to be called when the modal is closed.
+ * @param {ReactNode} props.children - The content to be displayed inside the modal.
+ * @returns {JSX.Element} - The rendered Modal component.
+ */
+
 function Modal({ isOpen, onClose, children }) {
     const closeRef = useRef();
 
@@ -59,7 +70,7 @@ function Modal({ isOpen, onClose, children }) {
 Modal.propTypes = {
     isOpen: PropTypes.bool,
     onClose: PropTypes.func,
-    children: PropTypes.object,
+    children: PropTypes.node,
 };
 
 export default Modal;
