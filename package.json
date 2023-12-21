@@ -2,7 +2,7 @@
     "name": "my-react-modal-sv",
     "description": "A simple modal component for React applications",
     "private": false,
-    "version": "1.1.5",
+    "version": "1.1.6",
     "type": "module",
     "main": "./dist/my-react-modal-sv.umd.js",
     "module": "./dist/my-react-modal-sv.es.js",
