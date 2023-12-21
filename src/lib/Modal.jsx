@@ -36,6 +36,8 @@ function Modal({ isOpen, onClose, children }) {
     }, [onClose]);
     return (
         <div
+            data-testid="my-react-modal-container"
+            id="my-react-modal-container"
             className={`fixed inset-0 bg-slate-950
             bg-opacity-50 transition-opacity ${
                 isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
